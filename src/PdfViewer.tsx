@@ -5,9 +5,9 @@ import { PdfViewerContainerProps } from "../typings/PdfViewerProps";
 import "./ui/PdfViewer.css";
 
 export function PdfViewer(props: PdfViewerContainerProps): ReactElement {
-    const fileUrl = `/file?guid=${props.guidAttribute.value}&changedDate=${props.changeDateAttribute.value}8&target=window`;
+    const fileUrl = `${props.file?.value?.uri}&target=window${props.urlOptions}`;
     return (
-        <object data={fileUrl} type="application/pdf" className="widget-pdf-viewer" height={props.height}>
+        <object data={fileUrl} type="application/pdf" className="widget-pdf-viewer" width="100%" height="100%">
             <p>
                 Unable to display PDF file. <a href={fileUrl}>Download</a> instead.
             </p>

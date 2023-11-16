@@ -4,16 +4,15 @@
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
-import { EditableValue } from "mendix";
+import { DynamicValue, FileValue } from "mendix";
 
 export interface PdfViewerContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    guidAttribute: EditableValue<string>;
-    changeDateAttribute: EditableValue<Date>;
-    height: number;
+    file: DynamicValue<FileValue>;
+    urlOptions: string;
 }
 
 export interface PdfViewerPreviewProps {
@@ -25,7 +24,6 @@ export interface PdfViewerPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
-    guidAttribute: string;
-    changeDateAttribute: string;
-    height: number | null;
+    file: string;
+    urlOptions: string;
 }
